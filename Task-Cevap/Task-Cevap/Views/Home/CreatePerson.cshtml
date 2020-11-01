@@ -1,0 +1,84 @@
+﻿@model Task_Cevap.Models.PersonViewModel
+@{
+    ViewBag.Title = "AddPerson";
+}
+
+<h2>AddPerson</h2>
+<form asp-controller="home" asp-action="CreatePerson" method="post">
+    <div>
+        <label asp-for="Name" />
+        <input type="text" placeholder="Name" asp-for="Name" />
+    </div>
+    <div>
+        <label asp-for="LastName" />
+        <input type="text" placeholder="LastName" asp-for="LastName" />
+    </div>
+    <div>
+        <label asp-for="Address" />
+        <textarea placeholder="Address" asp-for="Address"></textarea>
+    </div>
+    <div>
+        <label asp-for="Mail" />
+        <input type="text" placeholder="Mail" asp-for="Mail" />
+    </div>
+    <div>
+        <button class="btn btn-success" type="submit">Create Person</button>
+    </div>
+
+</form>
+@section Scripts {
+    <script>
+        /*
+        form.onsubmit = function (e) {
+            e.preventDefault();
+
+            fetch('/export/persons', { method: 'GET' })
+                .then(response => {
+                    return response.json()
+                }).then(data => {
+                    downloadFile(data);
+                }).catch(e => {
+                    console.log('HATA', e);
+                });
+        }
+        
+        function exportExcel() {
+            fetch('/export/persons', { method: 'GET' })
+                .then(response => {
+                    return response.json()
+                }).then(data => {
+                    downloadFile(data);
+                }).catch(e => {
+                    console.log('HATA', e);
+                });
+        }
+
+
+        function downloadFile(base64) {
+            let bytes = base64ToByteArray(base64);
+
+            let blob = new Blob([bytes], { type: "application/octet-stream" });
+            let link = document.createElement('a');
+            link.href = window.URL.createObjectURL(blob);
+
+            let fileName = "simple.xlsx";
+            link.download = fileName;
+            link.click();
+        }
+
+        function base64ToByteArray(base64) {
+            let binaryString = window.atob(base64);
+
+            let len = binaryString.length;
+
+            let bytes = new Uint8Array(len);
+
+            for (let i = 0; i < len; i++) {
+                bytes[i] = binaryString.charCodeAt(i);
+            }
+
+            return bytes.buffer;
+        }
+        */
+    </script>
+}
